@@ -13,14 +13,12 @@ import ProductTour from '@/components/home/ProductTour';
 import MultipleViews from '@/components/home/MultipleViews';
 import WhyTeamsSwitch from '@/components/home/WhyTeamsSwitch';
 import AiSection from '@/components/home/AiSection';
-import Automations from '@/components/home/Automations';
 import UseCases from '@/components/home/UseCases';
 import SavingsCalculator from '@/components/home/SavingsCalculator';
 import TemplatesTeaser from '@/components/home/TemplatesTeaser';
 import Awards from '@/components/home/Awards';
 import StoriesTeaser from '@/components/home/StoriesTeaser';
 import MetricsBand from '@/components/home/MetricsBand';
-import Testimonials from '@/components/home/Testimonials';
 import IntegrationsTeaser from '@/components/home/IntegrationsTeaser';
 import SupportStats from '@/components/home/SupportStats';
 import SecurityTeaser from '@/components/home/SecurityTeaser';
@@ -141,24 +139,15 @@ export default function Page() {
       <HowItWorks />
       <FeatureTabs />
       <PackedFeatures />
-      <ProductTour />
       <MultipleViews />
       <WhyTeamsSwitch />
       <AiSection />
-      <Automations />
-      <UseCases />
       <SavingsCalculator />
-      <TemplatesTeaser />
-      <Awards />
       <StoriesTeaser />
-      <MetricsBand />
-      <Testimonials />
       <IntegrationsTeaser />
-      <SupportStats />
       <SecurityTeaser />
       <PricingTeaser />
       <FaqTeaser />
-      <BlogTeaser />
       <CtaSection />
       <Newsletter />
     </main>

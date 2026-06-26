@@ -100,12 +100,9 @@ export default function FeatureTabs() {
   ];
 
   return (
-    <div ref={containerRef} className="py-20 px-0">
+    <div ref={containerRef} className="bg-tabs-section py-20 px-0">
       <div className="max-w-[1200px] mx-auto px-[22px] reveal">
-        <div
-          className="border rounded-[30px] p-[clamp(30px,4.5vw,56px)]"
-          style={{ background: 'linear-gradient(150deg, #0e2e22 0%, #051610 100%)', borderColor: '#194938' }}
-        >
+        <div className="glass-panel rounded-[30px] p-[clamp(30px,4.5vw,56px)] relative overflow-hidden">
           {/* Head */}
           <div className="max-w-[850px] mx-auto mb-12 text-center">
             <Eyebrow>Take a closer look</Eyebrow>
@@ -119,7 +116,7 @@ export default function FeatureTabs() {
 
           {/* Split Pane Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-8 lg:gap-11 items-start">
-            
+
             {/* Sidebar Navigation */}
             <div className="feature-sidebar flex flex-row overflow-x-auto lg:flex-col gap-2 bg-[#0B1818]/60 border border-hairline/60 rounded-[20px] p-2.5 lg:p-4 shrink-0 scrollbar-none">
               {tabs.map((tab) => {
@@ -142,7 +139,7 @@ export default function FeatureTabs() {
 
             {/* Right Animated Tab Panel */}
             <div ref={panelRef} className="bg-[#0B1818]/30 border border-hairline/60 rounded-[24px] p-6 lg:p-9 min-h-[380px] flex items-center justify-center">
-              
+
               {/* Chat Panel */}
               {activeFeatureTab === 'chat' && (
                 <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-11 items-center w-full">

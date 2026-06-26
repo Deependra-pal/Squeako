@@ -91,8 +91,9 @@ html {
 }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
+  /* background: var(--paper); */
+  /* background-color: red; */
+  /* color: var(--ink); */
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -304,57 +305,68 @@ html {
    Dark Theme Section & Card Overrides
    ========================================== */
 
-/* 1. Override Tailwind inline gradient boxes with distinct green/teal shades */
+/* 1. Translucent glass overrides for Tailwind gradient boxes to let body gradient show through */
 
-/* White Box (cool ocean-slate dark) */
+/* White Box (translucent cool ocean-slate dark) */
 div.bg-gradient-to-br[class*="from-[#FDFAF4]"][class*="to-[#F3EBDB]"] {
-  background-image: linear-gradient(150deg, #162C3D 0%, #0F1D28 100%) !important;
-  background-color: #162C3D !important;
-  border-color: #233D52 !important;
+  background-image: linear-gradient(150deg, rgba(22, 44, 61, 0.35) 0%, rgba(15, 29, 40, 0.35) 100%) !important;
+  background-color: transparent !important;
+  border-color: rgba(35, 61, 82, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
 }
 
-/* Mint Box (deep emerald-mint green) */
+/* Mint Box (translucent deep emerald-mint green) */
 div.bg-gradient-to-br[class*="from-[#FDEDE3]"][class*="to-[#F8DAC4]"] {
-  background-image: linear-gradient(150deg, #0A261D 0%, #05140F 100%) !important;
-  background-color: #0A261D !important;
-  border-color: #133A2D !important;
+  background-image: linear-gradient(150deg, rgba(10, 38, 29, 0.4) 0%, rgba(5, 20, 15, 0.4) 100%) !important;
+  background-color: transparent !important;
+  border-color: rgba(19, 58, 45, 0.5) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
 }
 
-/* Lilac Box (warm forest olive-green) */
+/* Lilac Box (translucent warm forest olive-green) */
 div.bg-gradient-to-br[class*="from-[#FCEEE2]"][class*="to-[#F6DCC7]"] {
-  background-image: linear-gradient(150deg, #152E24 0%, #0D1E18 100%) !important;
-  background-color: #152E24 !important;
-  border-color: #1F3E31 !important;
+  background-image: linear-gradient(150deg, rgba(21, 46, 36, 0.4) 0%, rgba(13, 30, 24, 0.4) 100%) !important;
+  background-color: transparent !important;
+  border-color: rgba(31, 62, 49, 0.5) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
 }
 
-/* Dark Box (very dark green gradient) */
+/* Dark Box (translucent very dark green gradient) */
 div.bg-gradient-to-br[class*="from-[#1C140B]"][class*="to-[#0F0F0F]"] {
-  background-image: linear-gradient(150deg, #061814 0%, #020A08 100%) !important;
-  background-color: #061814 !important;
-  border-color: #112C22 !important;
+  background-image: linear-gradient(150deg, rgba(6, 24, 20, 0.45) 0%, rgba(2, 10, 8, 0.45) 100%) !important;
+  background-color: transparent !important;
+  border-color: rgba(17, 44, 34, 0.5) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
 }
 
 /* Override inline border colors for sections individually */
 div[class*="border-[#EBE2D1]"] {
-  border-color: #233D52 !important;
+  border-color: rgba(35, 61, 82, 0.4) !important;
 }
 
 div[class*="border-[#F2DDC9]"] {
-  border-color: #133A2D !important;
+  border-color: rgba(19, 58, 45, 0.5) !important;
 }
 
 div[class*="border-[#F0E1CF]"] {
-  border-color: #1F3E31 !important;
+  border-color: rgba(31, 62, 49, 0.5) !important;
 }
 
-/* 2. Override white elements (cards, item boxes) to use the dark theme cards */
+/* 2. Frosted glass card styling for standard components */
 main#main .bg-white,
 main#main div.bg-white,
 main#main a.bg-white,
 main#main button.bg-white {
-  background-color: var(--card) !important;
+  background-color: rgba(17, 34, 34, 0.55) !important;
   color: var(--ink) !important;
-  border-color: var(--hairline) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* 3. Handle specific components that have hardcoded light text colors */
@@ -369,17 +381,18 @@ main#main .text-muted {
 
 /* 4. Footer background override */
 footer {
-  background-image: linear-gradient(150deg, #06261B 0%, #03140E 100%) !important;
-  background-color: #06261B !important;
-  border-color: #1C3333 !important;
+  background-image: linear-gradient(150deg, #05140f 0%, #030e0a 100%) !important;
+  background-color: #05140f !important;
+  border-color: rgba(22, 209, 150, 0.12) !important;
 }
 
 /* 5. Mobile & Dropdown menu overrides */
 div[class*="bg-white"][class*="max-w-[340px]"],
 div[class*="bg-white"][class*="rounded-[18px]"] {
-  background-color: var(--card) !important;
+  background-color: rgba(17, 34, 34, 0.85) !important;
   color: var(--ink) !important;
-  border-color: var(--hairline) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(12px) !important;
 }
 
 /* Ensure link text inside dropdowns is readable */
@@ -397,6 +410,40 @@ div[class*="bg-white"][class*="rounded-[18px]"] span.text-muted {
 nav span.bg-violet-soft {
   color: #D9E38A !important;
   background-color: rgba(217, 227, 138, 0.12) !important;
+}
+
+/* Premium Visual Design Classes */
+.glass-panel {
+  background: rgba(12, 32, 24, 0.45) !important;
+  backdrop-filter: blur(20px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(140%) !important;
+  border: 1.5px solid rgba(22, 209, 150, 0.15) !important;
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.5) !important;
+}
+
+.card-premium {
+  background: rgba(17, 34, 34, 0.35) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 18px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+}
+
+.card-premium:hover {
+  border-color: rgba(22, 209, 150, 0.3) !important;
+  box-shadow: 0 16px 36px -12px rgba(22, 209, 150, 0.1) !important;
+  transform: translateY(-3px) !important;
+}
+
+.bg-ai-section {
+  background: linear-gradient(140deg, #04120b 0%, #082d1b 50%, #030d08 100%) !important;
+  border-top: 1.5px solid rgba(22, 209, 150, 0.12) !important;
+  border-bottom: 1.5px solid rgba(22, 209, 150, 0.12) !important;
+}
+
+.glow-radial {
+  background: radial-gradient(circle, rgba(22, 209, 150, 0.16) 0%, transparent 68%) !important;
 }
 
 /* Frosted glass navbar styling */
@@ -1092,5 +1139,3 @@ button.tool-chip.on {
 #teamOut {
   color: #16D196 !important;
 }
-
- 

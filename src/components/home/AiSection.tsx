@@ -36,12 +36,9 @@ export default function AiSection() {
   ];
 
   return (
-    <div className="py-[13px] px-0">
+    <div className="bg-ai-section py-[13px] px-0">
       <div className="max-w-[1200px] mx-auto px-[22px] reveal">
-        <div className="bg-gradient-to-br from-[#1C140B] via-[#2A1D10] to-[#0F0F0F] rounded-[30px] p-[clamp(34px,5vw,68px)] text-white relative overflow-hidden">
-          {/* Background circle decoration */}
-          <div className="absolute -top-[120px] -right-[90px] w-[400px] h-[400px] rounded-full bg-radial from-[#6ED190]/22 to-transparent z-0 pointer-events-none"></div>
-
+        <div className="glass-panel rounded-[30px] p-[clamp(34px,5vw,68px)] text-white relative overflow-hidden">
           {/* Head */}
           <div className="max-w-[850px] mx-auto mb-11 text-center relative z-10">
             <Eyebrow light>Meet Squeako AI</Eyebrow>

@@ -48,13 +48,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div ref={heroRef} className="relative py-[clamp(40px,6vw,72px)] px-0 pb-[clamp(20px,3vw,40px)] overflow-hidden">
-      {/* Background radial decorations */}
-      <div
-        className="absolute -top-[200px] -right-[160px] w-[640px] h-[640px] rounded-full z-0 pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(110, 209, 144, 0.18) 0%, transparent 62%)' }}
-      ></div>
-
+    <div ref={heroRef} className="bg-hero-section relative py-[clamp(40px,6vw,72px)] px-0 pb-[clamp(20px,3vw,40px)] overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-[22px] relative z-10 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-[54px] items-start">
         {/* Left Copy */}
         <div className="flex flex-col">

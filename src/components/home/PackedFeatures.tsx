@@ -161,16 +161,7 @@ export default function PackedFeatures() {
   ];
 
   return (
-    <div ref={containerRef} className="py-20 px-0 relative overflow-hidden">
-      {/* Ambient background glows */}
-      <div
-        className="absolute -top-[10%] left-[5%] w-[600px] h-[600px] rounded-full z-0 pointer-events-none opacity-30 blur-[130px]"
-        style={{ background: 'radial-gradient(circle, rgba(31, 169, 104, 0.16) 0%, transparent 70%)' }}
-      ></div>
-      <div
-        className="absolute -bottom-[10%] right-[5%] w-[500px] h-[500px] rounded-full z-0 pointer-events-none opacity-25 blur-[120px]"
-        style={{ background: 'radial-gradient(circle, rgba(217, 227, 138, 0.08) 0%, transparent 70%)' }}
-      ></div>
+    <div ref={containerRef} className="bg-features-section py-20 px-0 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-[22px] relative z-10">
         {/* Head */}
         <div className="max-w-[850px] mx-auto mb-14 text-center">

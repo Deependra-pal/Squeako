@@ -1,8 +1,38 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Eyebrow from '../shared/Eyebrow';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function StoriesTeaser() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo('.story-col',
+        { y: 35, opacity: 0, scale: 0.98 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 85%',
+            once: true,
+          }
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   const stories = [
     {
       metric: '₹38k → ₹6k / mo',
@@ -31,9 +61,9 @@ export default function StoriesTeaser() {
   ];
 
   return (
-    <div className="py-[13px] px-0">
-      <div className="max-w-[1200px] mx-auto px-[22px] reveal">
-        <div className="bg-gradient-to-br from-[#FDFAF4] to-[#F3EBDB] border border-[#EBE2D1] rounded-[30px] p-[clamp(34px,5vw,68px)] shadow-sh-sm">
+    <div ref={containerRef} className="bg-stories-section py-20 px-0 relative">
+      <div className="max-w-[1200px] mx-auto px-[22px] relative z-10">
+        <div className="py-2">
           {/* Head */}
           <div className="max-w-[850px] mx-auto mb-11 text-center">
             <Eyebrow>Real results</Eyebrow>
@@ -47,13 +77,13 @@ export default function StoriesTeaser() {
             {stories.map((story) => (
               <div
                 key={story.name}
-                className="bg-white border border-hairline rounded-2xl p-6 flex flex-col gap-3.5 hover:-translate-y-1 hover:shadow-sh-md transition-all duration-200"
+                className="story-col opacity-0 card-premium p-7 flex flex-col gap-4"
               >
                 <div className="font-sora font-extrabold text-[1.7rem] bg-grad bg-clip-text text-transparent leading-[1.1] w-fit">
                   {story.metric}
                 </div>
                 <p className="text-[0.95rem] text-ink leading-relaxed flex-1">{story.quote}</p>
-                <div className="flex items-center gap-3 pt-3.5 border-t border-paper">
+                <div className="flex items-center gap-3 pt-3.5 border-t border-white/5">
                   <span
                     className="w-[42px] h-[42px] rounded-full grid place-items-center text-white font-sora font-bold text-center flex-none"
                     style={{ backgroundColor: story.avatarBg }}

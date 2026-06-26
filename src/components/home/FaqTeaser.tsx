@@ -31,23 +31,21 @@ export default function FaqTeaser() {
   ];
 
   return (
-    <div className="py-[13px] px-0">
-      <div className="max-w-[1200px] mx-auto px-[22px] reveal">
-        <div className="bg-gradient-to-br from-[#FCEEE2] to-[#F6DCC7] border border-[#F0E1CF] rounded-[30px] p-[clamp(34px,5vw,68px)]">
-          {/* Head */}
-          <div className="max-w-[680px] mx-auto mb-11 text-center">
-            <Eyebrow>Questions, answered</Eyebrow>
-            <h2 className="text-[clamp(1.8rem,3.8vw,2.7rem)] font-sora font-extrabold mt-3.5 mb-3.5 leading-tight text-ink">
-              Frequently asked
-            </h2>
-          </div>
+    <div className="bg-faq-section py-20 px-0 relative overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-[22px] reveal relative z-10">
+        {/* Head */}
+        <div className="max-w-[680px] mx-auto mb-11 text-center">
+          <Eyebrow>Questions, answered</Eyebrow>
+          <h2 className="text-[clamp(1.8rem,3.8vw,2.7rem)] font-sora font-extrabold mt-3.5 mb-3.5 leading-tight text-ink">
+            Frequently asked
+          </h2>
+        </div>
 
-          {/* FAQ Accordion List */}
-          <div className="max-w-[760px] mx-auto flex flex-col gap-[11px]">
-            {faqs.map((faq, index) => (
-              <FaqItem key={index} question={faq.q} answer={faq.a} />
-            ))}
-          </div>
+        {/* FAQ Accordion List */}
+        <div className="max-w-[760px] mx-auto flex flex-col gap-[11px]">
+          {faqs.map((faq, index) => (
+            <FaqItem key={index} question={faq.q} answer={faq.a} />
+          ))}
         </div>
       </div>
     </div>

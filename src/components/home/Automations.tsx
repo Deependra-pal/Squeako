@@ -1,7 +1,37 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Eyebrow from '../shared/Eyebrow';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function Automations() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo('.auto-card',
+        { y: 40, opacity: 0, scale: 0.98 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 85%',
+            once: true,
+          }
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   const cards = [
     {
       whenText: 'When',
@@ -67,63 +97,67 @@ export default function Automations() {
   ];
 
   return (
-    <div className="py-[13px] px-0">
-      <div className="max-w-[1200px] mx-auto px-[22px] reveal">
-        <div className="bg-gradient-to-br from-[#FCEEE2] to-[#F6DCC7] border border-[#F0E1CF] rounded-[30px] p-[clamp(34px,5vw,68px)]">
-          {/* Head */}
-          <div className="max-w-[850px] mx-auto mb-11 text-center">
-            <Eyebrow>No-code automations</Eyebrow>
-            <h2 className="text-[clamp(1.8rem,3.8vw,2.7rem)] font-sora font-extrabold mt-3.5 mb-3.5 leading-tight text-ink">
-              Automate the busywork
-            </h2>
-            <p className="text-[1.1rem] text-muted">
-              Set simple &quot;when this, do that&quot; rules so routine updates happen on their own.
-            </p>
-          </div>
+    <div ref={containerRef} className="py-20 px-0 relative overflow-hidden">
+      {/* Background decoration glow */}
+      <div
+        className="absolute bottom-1/4 right-1/4 w-[700px] h-[400px] rounded-full z-0 pointer-events-none opacity-20 blur-[130px]"
+        style={{ background: 'radial-gradient(circle, rgba(217, 227, 138, 0.15) 0%, transparent 70%)' }}
+      ></div>
 
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-[18px]">
-            {cards.map((card, idx) => (
-              <div key={idx} className="bg-white border border-hairline rounded-2xl p-[18px] shadow-sh-sm flex flex-col">
-                <div className="font-space-mono text-[0.62rem] tracking-[0.06em] uppercase text-[#6ED190] mb-2.5">
-                  {card.whenText}
-                </div>
-                <div className="flex items-center gap-[10px]">
-                  <span
-                    className="w-[34px] h-[34px] rounded-[9px] grid place-items-center flex-none text-white"
-                    style={{ backgroundColor: card.triggerBg }}
-                  >
-                    {card.triggerIcon}
+      <div className="max-w-[1200px] mx-auto px-[22px] relative z-10">
+        {/* Head */}
+        <div className="max-w-[850px] mx-auto mb-11 text-center">
+          <Eyebrow>No-code automations</Eyebrow>
+          <h2 className="text-[clamp(1.8rem,3.8vw,2.7rem)] font-sora font-extrabold mt-3.5 mb-3.5 leading-tight text-ink">
+            Automate the busywork
+          </h2>
+          <p className="text-[1.1rem] text-muted">
+            Set simple &quot;when this, do that&quot; rules so routine updates happen on their own.
+          </p>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[18px]">
+          {cards.map((card, idx) => (
+            <div key={idx} className="auto-card opacity-0 bg-white border border-hairline rounded-2xl p-[18px] shadow-sh-sm flex flex-col">
+              <div className="font-space-mono text-[0.62rem] tracking-[0.06em] uppercase text-[#6ED190] mb-2.5">
+                {card.whenText}
+              </div>
+              <div className="flex items-center gap-[10px]">
+                <span
+                  className="w-[34px] h-[34px] rounded-[9px] grid place-items-center flex-none text-white"
+                  style={{ backgroundColor: card.triggerBg }}
+                >
+                  {card.triggerIcon}
+                </span>
+                <div>
+                  <b className="font-sora font-semibold text-[0.86rem] text-ink block leading-snug">
+                    {card.triggerTitle}
+                  </b>
+                  <span className="text-[0.76rem] text-muted block mt-0.5">
+                    {card.triggerSub}
                   </span>
-                  <div>
-                    <b className="font-sora font-semibold text-[0.86rem] text-ink block leading-snug">
-                      {card.triggerTitle}
-                    </b>
-                    <span className="text-[0.76rem] text-muted block mt-0.5">
-                      {card.triggerSub}
-                    </span>
-                  </div>
-                </div>
-                <div className="text-left text-muted text-[1rem] my-1 ml-[16px]">&darr;</div>
-                <div className="flex items-center gap-[10px]">
-                  <span
-                    className="w-[34px] h-[34px] rounded-[9px] grid place-items-center flex-none text-white"
-                    style={{ backgroundColor: card.actionBg }}
-                  >
-                    {card.actionIcon}
-                  </span>
-                  <div>
-                    <b className="font-sora font-semibold text-[0.86rem] text-ink block leading-snug">
-                      {card.actionTitle}
-                    </b>
-                    <span className="text-[0.76rem] text-muted block mt-0.5">
-                      {card.actionSub}
-                    </span>
-                  </div>
                 </div>
               </div>
-            ))}
-          </div>
+              <div className="text-left text-muted text-[1rem] my-1 ml-[16px]">&darr;</div>
+              <div className="flex items-center gap-[10px]">
+                <span
+                  className="w-[34px] h-[34px] rounded-[9px] grid place-items-center flex-none text-white"
+                  style={{ backgroundColor: card.actionBg }}
+                >
+                  {card.actionIcon}
+                </span>
+                <div>
+                  <b className="font-sora font-semibold text-[0.86rem] text-ink block leading-snug">
+                    {card.actionTitle}
+                  </b>
+                  <span className="text-[0.76rem] text-muted block mt-0.5">
+                    {card.actionSub}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

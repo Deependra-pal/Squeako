@@ -72,7 +72,7 @@ export default function Navbar() {
         <div className="max-w-[1200px] mx-auto px-[22px] lg:px-[40px] py-[18px] flex items-center justify-between gap-[18px]">
           {/* Logo */}
           <a href="/" onClick={handleLinkClick} className=" logo flex items-center flex-none">
-            <img src="/logo/Squeako Logo Final_Artboard 2.png" alt="Squeako Logo" className="w-[150px] h-[90px] -my-6 object-contain" />
+            <img src="/logo/1782391827071-a1ef33c7-4e28-4178-ae95-96525ad734f0.png" alt="Squeako Logo" className="w-[150px] h-[90px] -my-6 object-contain" />
           </a>
 
           {/* Desktop Nav Menu */}

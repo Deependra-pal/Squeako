@@ -116,12 +116,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <div ref={containerRef} className="py-20 px-0 relative overflow-hidden">
-      {/* Ambient background glow */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full z-0 pointer-events-none opacity-45 blur-[120px]"
-        style={{ background: 'radial-gradient(circle, rgba(22, 209, 150, 0.15) 0%, rgba(67, 107, 86, 0.05) 60%, transparent 100%)' }}
-      ></div>
+    <div ref={containerRef} className="bg-how-section py-20 px-0 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-[22px] relative z-10">
         {/* Section Head */}
         <div className="max-w-[780px] mx-auto mb-14 text-center">
@@ -148,18 +143,18 @@ export default function HowItWorks() {
                 style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
               >
                 {/* Step indicator */}
-                <div className="w-[42px] h-[42px] rounded-[12px] step-num-glossy font-sora font-extrabold text-[1.15rem] flex items-center justify-center mb-4 z-10 relative bg-[#0B1818]">
+                <div className="w-[42px] h-[42px] rounded-[12px] step-num-glossy font-sora font-extrabold text-[1.15rem] flex items-center justify-center mb-4 z-10 relative">
                   {step.num}
                 </div>
-                
+
                 <span className="font-space-mono text-[0.66rem] tracking-[0.08em] uppercase text-muted mb-1">
                   {step.tag}
                 </span>
-                
+
                 <h3 className="font-sora font-bold text-[1.14rem] text-ink mb-2">
                   {step.title}
                 </h3>
-                
+
                 <p className="text-muted text-[0.82rem] leading-relaxed mb-5 flex-grow">
                   {step.desc}
                 </p>

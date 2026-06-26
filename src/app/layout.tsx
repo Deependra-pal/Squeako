@@ -3,7 +3,6 @@ import { Inter, Sora, Space_Mono, Poppins } from 'next/font/google';
 import '@/styles/globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import CustomCursor from '@/components/layout/CustomCursor';
 import { siteMetadata, softwareAppSchema, faqSchema } from '@/config/site';
 
 const poppins = Poppins({
@@ -52,7 +51,6 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
-        <CustomCursor />
         <Navbar />
         {children}
         <Footer />

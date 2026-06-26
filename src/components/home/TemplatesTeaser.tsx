@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Eyebrow from '../shared/Eyebrow';
 import TemplateCard from '../shared/TemplateCard';
 import Button from '../shared/Button';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function TemplatesTeaser() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo('.tmpl-card',
+        { y: 35, opacity: 0, scale: 0.97 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 85%',
+            once: true,
+          }
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   const templates = [
     {
       topBg: '#436B56',
@@ -49,9 +79,9 @@ export default function TemplatesTeaser() {
   ];
 
   return (
-    <div className="py-[13px] px-0">
-      <div className="max-w-[1200px] mx-auto px-[22px] reveal">
-        <div className="bg-gradient-to-br from-[#FDFAF4] to-[#F3EBDB] border border-[#EBE2D1] rounded-[30px] p-[clamp(34px,5vw,68px)] shadow-sh-sm">
+    <div ref={containerRef} className="py-[13px] px-0">
+      <div className="max-w-[1200px] mx-auto px-[22px]">
+        <div className="bg-gradient-to-br from-[#FCEEE2] to-[#F6DCC7] border border-[#F0E1CF] rounded-[30px] p-[clamp(34px,5vw,68px)] shadow-sh-sm">
           {/* Head */}
           <div className="max-w-[850px] mx-auto mb-11 text-center">
             <Eyebrow>Start in seconds</Eyebrow>
@@ -66,13 +96,14 @@ export default function TemplatesTeaser() {
           {/* Grid list of template cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {templates.map((tmpl) => (
-              <TemplateCard
-                key={tmpl.title}
-                topBg={tmpl.topBg}
-                icon={tmpl.icon}
-                title={tmpl.title}
-                description={tmpl.desc}
-              />
+              <div key={tmpl.title} className="tmpl-card opacity-0">
+                <TemplateCard
+                  topBg={tmpl.topBg}
+                  icon={tmpl.icon}
+                  title={tmpl.title}
+                  description={tmpl.desc}
+                />
+              </div>
             ))}
           </div>
 

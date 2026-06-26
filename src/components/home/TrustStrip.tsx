@@ -3,7 +3,7 @@ import Badge from '../shared/Badge';
 
 export default function TrustStrip() {
   return (
-    <div className="py-[13px] px-0">
+    <div className="bg-trust-section py-[13px] px-0">
       <div className="max-w-[1200px] mx-auto px-[22px]">
         <div className="text-center reveal">
           <p className="font-space-mono text-[0.7rem] tracking-[0.14em] uppercase text-muted mb-[18px]">

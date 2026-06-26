@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Eyebrow from '../shared/Eyebrow';
 import Button from '../shared/Button';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function BlogTeaser() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo('.blog-card',
+        { y: 35, opacity: 0, scale: 0.98 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 85%',
+            once: true,
+          }
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   const posts = [
     {
       imgText: 'Switching from Slack: a 1-day plan',
@@ -35,9 +65,9 @@ export default function BlogTeaser() {
   ];
 
   return (
-    <div className="py-[13px] px-0">
-      <div className="max-w-[1200px] mx-auto px-[22px] reveal">
-        <div className="bg-gradient-to-br from-[#0C281D] to-[#081814] border border-[#1C3333] rounded-[30px] p-[clamp(34px,5vw,68px)] shadow-sh-sm">
+    <div ref={containerRef} className="py-[13px] px-0">
+      <div className="max-w-[1200px] mx-auto px-[22px]">
+        <div className="bg-gradient-to-br from-[#FDEDE3] to-[#F8DAC4] border border-[#F2DDC9] rounded-[30px] p-[clamp(34px,5vw,68px)] shadow-sh-sm">
           <div className="max-w-[680px] mx-auto mb-11 text-center">
             <Eyebrow>From the blog</Eyebrow>
             <h2 className="text-[clamp(1.8rem,3.8vw,2.7rem)] font-sora font-extrabold mt-3.5 mb-3.5 leading-tight text-ink">
@@ -52,7 +82,7 @@ export default function BlogTeaser() {
               <Link
                 href="/resources"
                 key={idx}
-                className="bg-white border border-hairline rounded-2xl overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-sh-md transition-all duration-200 cursor-pointer"
+                className="blog-card opacity-0 bg-white border border-hairline rounded-2xl overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-sh-md transition-all duration-200 cursor-pointer"
               >
                 <div
                   className="h-[140px] bg-grad grid place-items-center text-white font-sora font-bold text-[0.92rem] opacity-[0.94] text-center px-4"

@@ -1,26 +1,62 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Eyebrow from '../shared/Eyebrow';
 import Button from '../shared/Button';
 import Badge from '../shared/Badge';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function SecurityTeaser() {
-  return (
-    <div className="py-[13px] px-0">
-      <div className="max-w-[1200px] mx-auto px-[22px] reveal">
-        <div className="bg-gradient-to-br from-[#FCEEE2] to-[#F6DCC7] border border-[#F0E1CF] rounded-[30px] p-[clamp(34px,5vw,68px)]">
-          {/* Head */}
-          <div className="max-w-[850px] mx-auto mb-11 text-center">
-            <Eyebrow>Safe & in India</Eyebrow>
-            <h2 className="text-[clamp(1.8rem,3.8vw,2.7rem)] font-sora font-extrabold mt-3.5 mb-3.5 leading-tight text-ink">
-              Security your compliance team will like
-            </h2>
-            <p className="text-[1.1rem] text-muted">
-              Encryption in transit and at rest, data hosted in India, DPDP-ready, admin controls, audit logs and SSO.
-            </p>
-          </div>
+  const containerRef = useRef<HTMLDivElement>(null);
 
-          {/* Badges Center Row */}
-          <div className="flex flex-wrap justify-center gap-2 mb-[22px]">
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo('.trust-badge',
+        { y: 20, opacity: 0, scale: 0.93 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.7,
+          stagger: 0.08,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 85%',
+            once: true,
+          }
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div ref={containerRef} className="py-20 px-0 relative overflow-hidden">
+      {/* Background glow decoration */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full z-0 pointer-events-none opacity-15 blur-[120px]"
+        style={{ background: 'radial-gradient(circle, rgba(22, 209, 150, 0.15) 0%, transparent 70%)' }}
+      ></div>
+
+      <div className="max-w-[1200px] mx-auto px-[22px] relative z-10">
+        {/* Head */}
+        <div className="max-w-[850px] mx-auto mb-11 text-center">
+          <Eyebrow>Safe & in India</Eyebrow>
+          <h2 className="text-[clamp(1.8rem,3.8vw,2.7rem)] font-sora font-extrabold mt-3.5 mb-3.5 leading-tight text-ink">
+            Security your compliance team will like
+          </h2>
+          <p className="text-[1.1rem] text-muted">
+            Encryption in transit and at rest, data hosted in India, DPDP-ready, admin controls, audit logs and SSO.
+          </p>
+        </div>
+
+        {/* Badges Center Row */}
+        <div className="flex flex-wrap justify-center gap-2 mb-[22px]">
+          <div className="trust-badge opacity-0">
             <Badge
               variant="trust"
               icon={
@@ -31,6 +67,8 @@ export default function SecurityTeaser() {
             >
               DPDP-ready
             </Badge>
+          </div>
+          <div className="trust-badge opacity-0">
             <Badge
               variant="trust"
               icon={
@@ -42,6 +80,8 @@ export default function SecurityTeaser() {
             >
               ISO 27001
             </Badge>
+          </div>
+          <div className="trust-badge opacity-0">
             <Badge
               variant="trust"
               icon={
@@ -53,6 +93,8 @@ export default function SecurityTeaser() {
             >
               SOC 2
             </Badge>
+          </div>
+          <div className="trust-badge opacity-0">
             <Badge
               variant="trust"
               icon={
@@ -65,13 +107,13 @@ export default function SecurityTeaser() {
               Data in India
             </Badge>
           </div>
+        </div>
 
-          <div className="text-center">
-            <Button href="/security" variant="ghost" className="group">
-              Read about security
-              <span className="inline-block transition-all duration-300 ease-out group-hover:translate-x-2 group-hover:scale-110">&rarr;</span>
-            </Button>
-          </div>
+        <div className="text-center">
+          <Button href="/security" variant="ghost" className="group">
+            Read about security
+            <span className="inline-block transition-all duration-300 ease-out group-hover:translate-x-2 group-hover:scale-110">&rarr;</span>
+          </Button>
         </div>
       </div>
     </div>

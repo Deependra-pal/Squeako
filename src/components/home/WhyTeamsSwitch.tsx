@@ -97,12 +97,7 @@ export default function WhyTeamsSwitch() {
   ];
 
   return (
-    <div ref={containerRef} className="py-20 px-0 relative overflow-hidden">
-      {/* Ambient background glow */}
-      <div
-        className="absolute top-1/3 right-1/4 w-[750px] h-[500px] rounded-full z-0 pointer-events-none opacity-35 blur-[140px]"
-        style={{ background: 'radial-gradient(circle, rgba(22, 209, 150, 0.12) 0%, rgba(20, 39, 39, 0.4) 60%, transparent 100%)' }}
-      ></div>
+    <div ref={containerRef} className="bg-switch-section py-20 px-0 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-[22px] relative z-10">
         {/* Head */}
         <div className="max-w-[850px] mx-auto mb-14 text-center">
