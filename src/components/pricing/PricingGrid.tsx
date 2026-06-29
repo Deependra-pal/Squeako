@@ -90,7 +90,7 @@ export default function PricingGrid() {
               className="border-2 border-[#16D196] rounded-[18px] py-[26px] px-[22px] flex flex-col relative shadow-[0_20px_50px_rgba(22,209,150,0.16)] hover:shadow-[0_24px_60px_rgba(22,209,150,0.32)] hover:-translate-y-1.5 transition-all duration-300"
               style={{ background: 'linear-gradient(150deg, #16523f 0%, #0b2c22 100%)' }}
             >
-              <span className="absolute top-[-13px] left-1/2 -translate-x-1/2 bg-[#16D196] text-[#0B1818] font-space-mono text-[0.66rem] font-bold tracking-[0.1em] py-[6px] px-[14px] rounded-full whitespace-nowrap">
+              <span className="absolute top-[-13px] left-1/2 -translate-x-1/2 bg-[#16D196] text-[#090D0C] font-space-mono text-[0.66rem] font-bold tracking-[0.1em] py-[6px] px-[14px] rounded-full whitespace-nowrap">
                 MOST POPULAR
               </span>
               <div className="font-sora font-bold text-[1.18rem] text-ink">Growth</div>

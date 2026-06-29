@@ -29,13 +29,13 @@ export default function Button({
 
   const variantClasses = {
     primary:
-      'border border-transparent bg-[#D9E38A] text-[#0B1818] hover:bg-[#436B56] hover:text-white hover:-translate-y-[2px] shadow-sm hover:shadow-[0_12px_30px_rgba(67,107,86,0.25)]',
+      'border border-transparent bg-[#D9E38A] text-[#090D0C] hover:bg-[#436B56] hover:text-white hover:-translate-y-[2px] shadow-sm hover:shadow-[0_12px_30px_rgba(67,107,86,0.25)]',
     ghost:
-      'border-[1.5px] border-solid border-white/40 bg-transparent text-white hover:border-[#D9E38A] hover:bg-[#D9E38A] hover:text-[#0B1818] hover:-translate-y-[2px] shadow-sm',
+      'border-[1.5px] border-solid border-white/40 bg-transparent text-white hover:border-[#D9E38A] hover:bg-[#D9E38A] hover:text-[#090D0C] hover:-translate-y-[2px] shadow-sm',
     light:
-      'border border-transparent bg-transparent text-white hover:bg-[#D9E38A] hover:text-[#0B1818] hover:-translate-y-[2px]',
+      'border border-transparent bg-transparent text-white hover:bg-[#D9E38A] hover:text-[#090D0C] hover:-translate-y-[2px]',
     'outline-light':
-      'border-[1.5px] border-solid border-white/50 bg-transparent text-white hover:border-[#D9E38A] hover:bg-[#D9E38A] hover:text-[#0B1818] hover:-translate-y-[2px]',
+      'border-[1.5px] border-solid border-white/50 bg-transparent text-white hover:border-[#D9E38A] hover:bg-[#D9E38A] hover:text-[#090D0C] hover:-translate-y-[2px]',
   };
 
   const computedClasses = `${baseClasses} ${sizeClasses} ${variantClasses[variant]} ${className}`;

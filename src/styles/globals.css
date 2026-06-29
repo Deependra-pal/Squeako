@@ -62,7 +62,7 @@ h6 {
   --mint-deep: #16D196;
   --mint-wash: #0C281D;
   --lilac: #142727;
-  --paper: #0B1818;
+  --paper: #090D0C;
   --card: #112222;
   --muted: #8F9D9D;
   --muted-lt: #4E6363;
@@ -79,11 +79,11 @@ h6 {
   --box-white-border: #1C3333;
   --box-lilac-bg: linear-gradient(150deg, #142727 0%, #0F1F1F 100%);
   --box-lilac-border: #1C3333;
-  --box-mint-bg: linear-gradient(150deg, #0C281D 0%, #0B1818 100%);
+  --box-mint-bg: linear-gradient(150deg, #0C281D 0%, #090D0C 100%);
   --box-mint-border: #1C3333;
-  --box-dark-bg: linear-gradient(150deg, #0B1818 0%, #081111 100%);
-  --box-grad-bg: linear-gradient(120deg, #436B56 0%, #16D196 55%, #0B1818 100%);
-  --page-hero-bg: linear-gradient(180deg, #0B1818 0%, #0B1818 100%);
+  --box-dark-bg: linear-gradient(150deg, #090D0C 0%, #081111 100%);
+  --box-grad-bg: linear-gradient(120deg, #436B56 0%, #16D196 55%, #090D0C 100%);
+  --page-hero-bg: linear-gradient(180deg, #090D0C 0%, #090D0C 100%);
 }
 
 html {
@@ -91,9 +91,8 @@ html {
 }
 
 body {
-  /* background: var(--paper); */
-  /* background-color: red; */
-  /* color: var(--ink); */
+  background: var(--paper);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -462,7 +461,7 @@ nav button.bg-violet-soft,
 nav a.bg-violet-soft,
 nav .hover\:bg-violet-soft:hover,
 nav [class*="hover:bg-violet-soft"]:hover {
-  background-color: #0B1818 !important;
+  background-color: #090D0C !important;
   color: #D9E38A !important;
 }
 
@@ -526,12 +525,12 @@ footer a:hover {
 footer a[class*="hover:bg-"]:hover,
 footer button[class*="hover:bg-"]:hover {
   background-color: #D9E38A !important;
-  color: #0B1818 !important;
+  color: #090D0C !important;
 }
 
 footer a[class*="hover:bg-"]:hover svg,
 footer button[class*="hover:bg-"]:hover svg {
-  color: #0B1818 !important;
+  color: #090D0C !important;
 }
 
 /* Glossy Waterdrop Badge styling */

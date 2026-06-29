@@ -24,7 +24,7 @@ export default function FaqItem({ question, answer, className = '' }: FaqItemPro
         <span>{question}</span>
         <span
           className={`w-[26px] h-[26px] rounded-[8px] flex items-center justify-center font-extrabold text-[1.1rem] flex-none transition-all duration-300 ease-in-out ${
-            isOpen ? 'rotate-180 bg-[#6ED190] text-[#0B1818]' : 'bg-[#E6F9EE] text-[#137A48]'
+            isOpen ? 'rotate-180 bg-[#6ED190] text-[#090D0C]' : 'bg-[#E6F9EE] text-[#137A48]'
           }`}
         >
           {isOpen ? '−' : '+'}
