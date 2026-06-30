@@ -16,19 +16,19 @@ export default function PricingTable() {
             <table className="w-full border-collapse min-w-[680px] bg-white">
               <thead>
                 <tr>
-                  <th className="p-[15px_17px] text-left border-b border-hairline text-[0.93rem] font-sora font-bold bg-[#fcfbff] text-[#0B1818]">
+                  <th className="p-[15px_17px] text-left border-b border-hairline text-[0.93rem] font-sora font-bold bg-[#fcfbff] text-[#090D0C]">
                     Feature
                   </th>
-                  <th className="p-[15px_17px] text-left border-b border-hairline text-[0.93rem] font-sora font-bold bg-[#fcfbff] text-[#0B1818]">
+                  <th className="p-[15px_17px] text-left border-b border-hairline text-[0.93rem] font-sora font-bold bg-[#fcfbff] text-[#090D0C]">
                     Free
                   </th>
-                  <th className="p-[15px_17px] text-left border-b border-hairline text-[0.93rem] font-sora font-bold bg-[#16D196] text-[#0B1818]">
+                  <th className="p-[15px_17px] text-left border-b border-hairline text-[0.93rem] font-sora font-bold bg-[#16D196] text-[#090D0C]">
                     Growth
                   </th>
-                  <th className="p-[15px_17px] text-left border-b border-hairline text-[0.93rem] font-sora font-bold bg-[#fcfbff] text-[#0B1818]">
+                  <th className="p-[15px_17px] text-left border-b border-hairline text-[0.93rem] font-sora font-bold bg-[#fcfbff] text-[#090D0C]">
                     Business
                   </th>
-                  <th className="p-[15px_17px] text-left border-b border-hairline text-[0.93rem] font-sora font-bold bg-[#fcfbff] text-[#0B1818]">
+                  <th className="p-[15px_17px] text-left border-b border-hairline text-[0.93rem] font-sora font-bold bg-[#fcfbff] text-[#090D0C]">
                     Enterprise
                   </th>
                 </tr>

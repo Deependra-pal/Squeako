@@ -29,6 +29,7 @@ export default function Button({
 
   const variantClasses = {
     primary:
+<<<<<<< HEAD
       'border border-transparent bg-[#16D196] text-[#090D0C] hover:bg-[#105e3a] hover:text-white hover:-translate-y-[2px] shadow-[0_0_15px_rgba(22,209,150,0.2)] hover:shadow-[0_0_25px_rgba(22,209,150,0.65)]',
     ghost:
       'border-[1.5px] border-solid border-[#16D196]/40 bg-transparent text-[#16D196] hover:border-[#16D196] hover:bg-[#16D196] hover:text-[#090D0C] hover:-translate-y-[2px] shadow-sm hover:shadow-[0_0_20px_rgba(22,209,150,0.4)]',
@@ -36,6 +37,15 @@ export default function Button({
       'border border-transparent bg-transparent text-white hover:bg-[#16D196] hover:text-[#090D0C] hover:-translate-y-[2px]',
     'outline-light':
       'border-[1.5px] border-solid border-white/50 bg-transparent text-white hover:border-[#16D196] hover:bg-[#16D196] hover:text-[#090D0C] hover:-translate-y-[2px] hover:shadow-[0_0_20px_rgba(22,209,150,0.4)]',
+=======
+      'border border-transparent bg-[#D9E38A] text-[#090D0C] hover:bg-[#436B56] hover:text-white hover:-translate-y-[2px] shadow-sm hover:shadow-[0_12px_30px_rgba(67,107,86,0.25)]',
+    ghost:
+      'border-[1.5px] border-solid border-white/40 bg-transparent text-white hover:border-[#D9E38A] hover:bg-[#D9E38A] hover:text-[#090D0C] hover:-translate-y-[2px] shadow-sm',
+    light:
+      'border border-transparent bg-transparent text-white hover:bg-[#D9E38A] hover:text-[#090D0C] hover:-translate-y-[2px]',
+    'outline-light':
+      'border-[1.5px] border-solid border-white/50 bg-transparent text-white hover:border-[#D9E38A] hover:bg-[#D9E38A] hover:text-[#090D0C] hover:-translate-y-[2px]',
+>>>>>>> 8dc5601bbb5d2dab7b47e0627f73101e12cd7afc
   };
 
   const computedClasses = `${baseClasses} ${sizeClasses} ${variantClasses[variant]} ${className}`;
