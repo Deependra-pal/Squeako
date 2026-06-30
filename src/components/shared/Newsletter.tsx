@@ -21,8 +21,8 @@ export default function Newsletter() {
   };
 
   return (
-    <div className="py-[13px] px-0">
-      <div className="max-w-[1200px] mx-auto px-[22px] reveal">
+    <div className="py-24 md:py-32 px-0">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-8 reveal">
         <div className="bg-gradient-to-br from-[#FCEEE2] to-[#F6DCC7] border border-[#F0E1CF] rounded-[30px] p-[clamp(34px,5vw,68px)]">
           <div className="max-w-[560px] mx-auto text-center">
             <Eyebrow>Stay in the loop</Eyebrow>

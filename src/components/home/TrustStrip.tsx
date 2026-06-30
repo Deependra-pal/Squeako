@@ -3,18 +3,18 @@ import Badge from '../shared/Badge';
 
 export default function TrustStrip() {
   return (
-    <div className="bg-trust-section py-[13px] px-0">
-      <div className="max-w-[1200px] mx-auto px-[22px]">
+    <div className="bg-trust-section py-12 md:py-16 px-0">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-8">
         <div className="text-center reveal">
           <p className="font-space-mono text-[0.7rem] tracking-[0.14em] uppercase text-muted mb-[18px]">
             Trusted by growing teams across India
           </p>
-          <div className="relative w-full max-w-[800px] mx-auto overflow-hidden py-4 my-4 marquee-container">
+          <div className="relative w-full overflow-hidden py-4 my-4 marquee-container">
             {/* Fading side overlays */}
             <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-paper to-transparent z-10 pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-paper to-transparent z-10 pointer-events-none"></div>
 
-            <div className="flex gap-12 animate-marquee whitespace-nowrap cursor-pointer">
+            <div className="flex gap-20 animate-marquee whitespace-nowrap cursor-pointer">
               {[
                 'Kettle', 'Routely', 'Finbar', 'Saanjh', 'Nimbus HR', 'Bytecrate',
                 'Kettle', 'Routely', 'Finbar', 'Saanjh', 'Nimbus HR', 'Bytecrate',
@@ -23,9 +23,9 @@ export default function TrustStrip() {
               ].map((logo, index) => (
                 <span
                   key={index}
-                  className="flex items-center gap-[9px] font-sora font-bold text-[1.02rem] text-[#9690ad] opacity-85 shrink-0"
+                  className="flex items-center gap-4.5 font-sora font-bold text-[1.75rem] text-[#9690ad] opacity-85 shrink-0"
                 >
-                  <span className="w-5 h-5 rounded-[6px] bg-[#d7d2ea] shrink-0"></span>
+                  <span className="w-8 h-8 rounded-[8px] bg-[#d7d2ea] shrink-0"></span>
                   {logo}
                 </span>
               ))}

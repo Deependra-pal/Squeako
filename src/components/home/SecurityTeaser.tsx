@@ -35,14 +35,14 @@ export default function SecurityTeaser() {
   }, []);
 
   return (
-    <div ref={containerRef} className="py-20 px-0 relative overflow-hidden">
+    <div ref={containerRef} className="py-24 md:py-32 px-0 relative overflow-hidden">
       {/* Background glow decoration */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full z-0 pointer-events-none opacity-15 blur-[120px]"
         style={{ background: 'radial-gradient(circle, rgba(22, 209, 150, 0.15) 0%, transparent 70%)' }}
       ></div>
 
-      <div className="max-w-[1200px] mx-auto px-[22px] relative z-10">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-8 relative z-10">
         {/* Head */}
         <div className="max-w-[850px] mx-auto mb-11 text-center">
           <Eyebrow>Safe & in India</Eyebrow>

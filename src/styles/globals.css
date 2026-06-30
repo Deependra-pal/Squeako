@@ -62,28 +62,28 @@ h6 {
   --mint-deep: #16D196;
   --mint-wash: #0C281D;
   --lilac: #142727;
-  --paper: #0B1818;
-  --card: #112222;
-  --muted: #8F9D9D;
-  --muted-lt: #4E6363;
-  --hairline: #1C3333;
+  --paper: #090D0C;
+  --card: #121817;
+  --muted: #FAFAFA;
+  --muted-lt: #E5E5E5;
+  --hairline: #1F2E2A;
   --grad: linear-gradient(120deg, #6ED190 0%, #16D196 50%, #D9E38A 100%);
-  --glow: 0 14px 34px rgba(217, 227, 138, .25);
+  --glow: 0 14px 34px rgba(22, 209, 150, .25);
   --sh-sm: 0 2px 10px rgba(34, 18, 80, .06);
   --sh-md: 0 16px 44px rgba(34, 18, 80, .10);
   --sh-lg: 0 34px 90px rgba(34, 18, 80, .18);
   --rbox: 30px;
 
   /* Box gradients & border overrides */
-  --box-white-bg: linear-gradient(150deg, #112222 0%, #0E1F1F 100%);
-  --box-white-border: #1C3333;
-  --box-lilac-bg: linear-gradient(150deg, #142727 0%, #0F1F1F 100%);
-  --box-lilac-border: #1C3333;
-  --box-mint-bg: linear-gradient(150deg, #0C281D 0%, #0B1818 100%);
-  --box-mint-border: #1C3333;
-  --box-dark-bg: linear-gradient(150deg, #0B1818 0%, #081111 100%);
-  --box-grad-bg: linear-gradient(120deg, #436B56 0%, #16D196 55%, #0B1818 100%);
-  --page-hero-bg: linear-gradient(180deg, #0B1818 0%, #0B1818 100%);
+  --box-white-bg: linear-gradient(150deg, #121817 0%, #090D0C 100%);
+  --box-white-border: #1F2E2A;
+  --box-lilac-bg: linear-gradient(150deg, #142727 0%, #090D0C 100%);
+  --box-lilac-border: #1F2E2A;
+  --box-mint-bg: linear-gradient(150deg, #0C281D 0%, #090D0C 100%);
+  --box-mint-border: #1F2E2A;
+  --box-dark-bg: linear-gradient(150deg, #090D0C 0%, #070A09 100%);
+  --box-grad-bg: linear-gradient(120deg, #436B56 0%, #16D196 55%, #090D0C 100%);
+  --page-hero-bg: linear-gradient(180deg, #090D0C 0%, #090D0C 100%);
 }
 
 html {
@@ -91,9 +91,8 @@ html {
 }
 
 body {
-  /* background: var(--paper); */
-  /* background-color: red; */
-  /* color: var(--ink); */
+  background-color: var(--paper);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -361,12 +360,21 @@ main#main .bg-white,
 main#main div.bg-white,
 main#main a.bg-white,
 main#main button.bg-white {
-  background-color: rgba(17, 34, 34, 0.55) !important;
+  background-color: rgba(10, 18, 17, 0.65) !important;
   color: var(--ink) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
   backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.12), inset 0 0 35px rgba(0, 0, 0, 0.85), 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+main#main .bg-white:hover,
+main#main div.bg-white:hover,
+main#main a.bg-white:hover,
+main#main button.bg-white:hover {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  box-shadow: inset 0 0 22px rgba(255, 255, 255, 0.15), inset 0 0 38px rgba(0, 0, 0, 0.9), 0 12px 30px rgba(0, 0, 0, 0.35) !important;
 }
 
 /* 3. Handle specific components that have hardcoded light text colors */
@@ -381,9 +389,9 @@ main#main .text-muted {
 
 /* 4. Footer background override */
 footer {
-  background-image: linear-gradient(150deg, #05140f 0%, #030e0a 100%) !important;
-  background-color: #05140f !important;
-  border-color: rgba(22, 209, 150, 0.12) !important;
+  background-image: linear-gradient(135deg, #071F17 0%, #0E2012 50%, #16200A 100%) !important;
+  background-color: #071F17 !important;
+  border-color: rgba(22, 209, 150, 0.25) !important;
 }
 
 /* 5. Mobile & Dropdown menu overrides */
@@ -419,6 +427,14 @@ nav span.bg-violet-soft {
   -webkit-backdrop-filter: blur(20px) saturate(140%) !important;
   border: 1.5px solid rgba(22, 209, 150, 0.15) !important;
   box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Keep the glass panel inside light wrapper dark glass for premium contrast */
+.feature-tabs-light-section .glass-panel {
+  background-color: #102020 !important;
+  border: 2px solid rgba(22, 209, 150, 0.45) !important;
+  border-radius: 30px !important;
+  box-shadow: 0 20px 50px rgba(16, 32, 32, 0.35) !important;
 }
 
 .card-premium {
@@ -462,7 +478,7 @@ nav button.bg-violet-soft,
 nav a.bg-violet-soft,
 nav .hover\:bg-violet-soft:hover,
 nav [class*="hover:bg-violet-soft"]:hover {
-  background-color: #0B1818 !important;
+  background-color: #090D0C !important;
   color: #D9E38A !important;
 }
 
@@ -526,12 +542,12 @@ footer a:hover {
 footer a[class*="hover:bg-"]:hover,
 footer button[class*="hover:bg-"]:hover {
   background-color: #D9E38A !important;
-  color: #0B1818 !important;
+  color: #090D0C !important;
 }
 
 footer a[class*="hover:bg-"]:hover svg,
 footer button[class*="hover:bg-"]:hover svg {
-  color: #0B1818 !important;
+  color: #090D0C !important;
 }
 
 /* Glossy Waterdrop Badge styling */
@@ -1138,4 +1154,105 @@ button.tool-chip.on {
 .team-out,
 #teamOut {
   color: #16D196 !important;
+}
+
+/* Styling overrides for the light background Packed Features section */
+.packed-features-light-section h2 {
+  color: #000000 !important;
+}
+
+.packed-features-light-section p {
+  color: #4B5563 !important;
+}
+
+.packed-features-light-section div.bg-white,
+.packed-features-light-section .bg-white {
+  background-color: #FFFFFF !important;
+  color: #090D0C !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+  backdrop-filter: none !important;
+}
+
+.packed-features-light-section div.bg-white b {
+  color: #090D0C !important;
+}
+
+.packed-features-light-section div.bg-white span {
+  color: #4B5563 !important;
+}
+
+.packed-features-light-section div.bg-white .bg-mint-wash {
+  background-color: #E8F5E9 !important;
+  color: #1B5E20 !important;
+}
+
+/* Global layout padding overrides for wider left/right gutters */
+div.max-w-\[1320px\],
+main#main div.max-w-\[1320px\] {
+  padding-left: 2.5rem !important;
+  /* increased from 1.5rem (px-6) */
+  padding-right: 2.5rem !important;
+  /* increased from 1.5rem (px-6) */
+}
+
+@media (min-width: 768px) {
+
+  div.max-w-\[1320px\],
+  main#main div.max-w-\[1320px\] {
+    padding-left: 4.5rem !important;
+    /* increased from 2rem (md:px-8) */
+    padding-right: 4.5rem !important;
+    /* increased from 2rem (md:px-8) */
+  }
+}
+
+/* Premium solid black step card styling */
+main#main .how-step-card {
+  background: #000000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.12), inset 0 0 35px rgba(0, 0, 0, 0.95), 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+main#main .how-step-card h3,
+main#main .how-step-card h4,
+main#main .how-step-card p,
+main#main .how-step-card span {
+  color: var(--ink) !important;
+  /* Revert text to white for absolute black background */
+}
+
+main#main .how-step-card p {
+  color: var(--muted) !important;
+  /* Muted white for descriptions */
+}
+
+main#main .how-step-card span.font-space-mono {
+  color: var(--muted) !important;
+  /* Muted white for tags */
+}
+
+main#main .how-step-card:hover {
+  background: #000000 !important;
+  border-color: rgba(22, 209, 150, 0.55) !important;
+  box-shadow: inset 0 0 22px rgba(22, 209, 150, 0.2), inset 0 0 40px rgba(0, 0, 0, 0.98), 0 12px 36px rgba(22, 209, 150, 0.05) !important;
+  transform: translateY(-6px) scale(1.02) !important;
+}
+/* 
+transform: translateY(-6px) scale(1.02) !important;
+} */
+
+/* Bottom visual slide-up animation on hover */
+main#main .how-step-card .step-card-visual {
+  opacity: 0 !important;
+  transform: translateY(24px) !important;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+main#main .how-step-card:hover .step-card-visual {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }

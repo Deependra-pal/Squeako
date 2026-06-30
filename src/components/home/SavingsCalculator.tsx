@@ -73,8 +73,8 @@ export default function SavingsCalculator() {
   };
 
   return (
-    <div ref={containerRef} className="bg-calc-section py-20 px-0">
-      <div className="max-w-[1200px] mx-auto px-[22px]">
+    <div ref={containerRef} className="bg-calc-section py-24 md:py-32 px-0">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-8">
         {/* Head */}
         <div className="max-w-[850px] mx-auto mb-14 text-center">
           <Eyebrow>See your savings</Eyebrow>

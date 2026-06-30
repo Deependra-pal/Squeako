@@ -18,8 +18,8 @@ export default function Footer() {
   };
 
   return (
-    <div className="py-[13px] px-0 pb-8 mt-8">
-      <div className="max-w-[1200px] mx-auto px-[22px]">
+    <div className="py-8 px-0 mt-8">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-8">
         <footer className="bg-gradient-to-br from-[#17110A] to-[#0F0F0F] text-[#9C968E] border border-white/5 rounded-[30px] relative overflow-hidden py-[clamp(34px,5vw,68px)] px-6 md:px-12">
           <div className="w-full">
 

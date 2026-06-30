@@ -7,7 +7,7 @@ import DownloadGrid from '@/components/download/DownloadGrid';
 export default function DownloadPage() {
   // Intersection Observer scroll animation triggers
   useEffect(() => {
-    const els = document.querySelectorAll('.reveal:not(.in)');
+    const els = document.querySelectorAll('.reveal:not(.in)'); 
 
     const animateCount = (el: HTMLElement) => {
       if (el.dataset.done) return;

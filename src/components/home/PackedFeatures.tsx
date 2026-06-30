@@ -161,12 +161,12 @@ export default function PackedFeatures() {
   ];
 
   return (
-    <div ref={containerRef} className="bg-features-section py-20 px-0 relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-[22px] relative z-10">
+    <div ref={containerRef} className="py-24 md:py-32 px-8 md:px-20 max-w-[1320px] mx-auto rounded-[32px] md:rounded-[48px] my-16 md:my-24 relative overflow-hidden">
+      <div className="relative z-10">
         {/* Head */}
         <div className="max-w-[850px] mx-auto mb-14 text-center">
-          <Eyebrow>And there's more</Eyebrow>
-          <h2 className="text-[clamp(1.8rem,3.8vw,2.7rem)] font-sora font-extrabold mt-3.5 mb-3.5 leading-tight text-ink">
+          <Eyebrow light>And there's more</Eyebrow>
+          <h2 className="text-[clamp(1.8rem,3.8vw,2.7rem)] font-sora font-extrabold mt-3.5 mb-3.5 leading-tight text-white">
             Packed with the little things that help
           </h2>
           <p className="text-[1.1rem] text-muted">
@@ -175,7 +175,7 @@ export default function PackedFeatures() {
         </div>
 
         {/* Grid list of pack cards */}
-        <div className="pack-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="pack-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feat) => (
             <TiltCard key={feat.title} className="pack-card-item h-full opacity-0">
               <PackCard icon={feat.icon} title={feat.title} subtitle={feat.subtitle} className="h-full" />

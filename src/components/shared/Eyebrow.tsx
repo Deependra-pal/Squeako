@@ -9,13 +9,14 @@ interface EyebrowProps {
 export default function Eyebrow({ children, light = false, className = '' }: EyebrowProps) {
   return (
     <span
-      className={`font-space-mono text-[0.72rem] tracking-[0.18em] uppercase font-bold inline-flex items-center gap-2 before:content-[""] before:w-[7px] before:h-[7px] before:rounded-full before:bg-[#6ED190] text-white ${
-        light
-          ? 'before:shadow-[0_0_0_3px_rgba(110,209,144,0.25)]'
-          : 'before:shadow-[0_0_0_3px_rgba(110,209,144,0.18)]'
-      } ${className}`}
+      className={`relative inline-flex items-center justify-center font-space-mono text-[0.68rem] tracking-[0.14em] uppercase font-bold py-1.5 px-3.5 border border-[#16D196] bg-[#16D196]/5 text-white select-none shadow-[inset_0_0_6px_rgba(22,209,150,0.25)] ${className}`}
     >
       {children}
+      {/* Corner green dots centered on sharp corners without shadow */}
+      <span className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] rounded-full bg-[#16D196] block"></span>
+      <span className="absolute -top-[3px] -right-[3px] w-[5px] h-[5px] rounded-full bg-[#16D196] block"></span>
+      <span className="absolute -bottom-[3px] -left-[3px] w-[5px] h-[5px] rounded-full bg-[#16D196] block"></span>
+      <span className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] rounded-full bg-[#16D196] block"></span>
     </span>
   );
 }

@@ -25,17 +25,17 @@ export default function Button({
     'inline-flex items-center justify-center gap-[9px] font-sora font-semibold rounded-[14px] cursor-pointer transition-all duration-180 ease-in-out whitespace-nowrap active:scale-[0.98]';
 
   const sizeClasses =
-    size === 'lg' ? 'py-[17px] px-[32px] text-[1.05rem]' : 'py-[14px] px-[26px] text-[1rem]';
+    size === 'lg' ? 'py-[13px] px-[26px] text-[0.98rem]' : 'py-[10px] px-[20px] text-[0.92rem]';
 
   const variantClasses = {
     primary:
-      'border border-transparent bg-[#D9E38A] text-[#0B1818] hover:bg-[#436B56] hover:text-white hover:-translate-y-[2px] shadow-sm hover:shadow-[0_12px_30px_rgba(67,107,86,0.25)]',
+      'border border-transparent bg-[#16D196] text-[#090D0C] hover:bg-[#105e3a] hover:text-white hover:-translate-y-[2px] shadow-[0_0_15px_rgba(22,209,150,0.2)] hover:shadow-[0_0_25px_rgba(22,209,150,0.65)]',
     ghost:
-      'border-[1.5px] border-solid border-white/40 bg-transparent text-white hover:border-[#D9E38A] hover:bg-[#D9E38A] hover:text-[#0B1818] hover:-translate-y-[2px] shadow-sm',
+      'border-[1.5px] border-solid border-[#16D196]/40 bg-transparent text-[#16D196] hover:border-[#16D196] hover:bg-[#16D196] hover:text-[#090D0C] hover:-translate-y-[2px] shadow-sm hover:shadow-[0_0_20px_rgba(22,209,150,0.4)]',
     light:
-      'border border-transparent bg-transparent text-white hover:bg-[#D9E38A] hover:text-[#0B1818] hover:-translate-y-[2px]',
+      'border border-transparent bg-transparent text-white hover:bg-[#16D196] hover:text-[#090D0C] hover:-translate-y-[2px]',
     'outline-light':
-      'border-[1.5px] border-solid border-white/50 bg-transparent text-white hover:border-[#D9E38A] hover:bg-[#D9E38A] hover:text-[#0B1818] hover:-translate-y-[2px]',
+      'border-[1.5px] border-solid border-white/50 bg-transparent text-white hover:border-[#16D196] hover:bg-[#16D196] hover:text-[#090D0C] hover:-translate-y-[2px] hover:shadow-[0_0_20px_rgba(22,209,150,0.4)]',
   };
 
   const computedClasses = `${baseClasses} ${sizeClasses} ${variantClasses[variant]} ${className}`;

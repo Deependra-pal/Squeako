@@ -100,9 +100,9 @@ export default function FeatureTabs() {
   ];
 
   return (
-    <div ref={containerRef} className="bg-tabs-section py-20 px-0">
-      <div className="max-w-[1200px] mx-auto px-[22px] reveal">
-        <div className="glass-panel rounded-[30px] p-[clamp(30px,4.5vw,56px)] relative overflow-hidden">
+    <div ref={containerRef} className="bg-[#D9E38A] rounded-[32px] md:rounded-[48px] w-full my-16 md:my-24 py-20 md:py-28 px-0 relative overflow-hidden">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-8 reveal">
+        <div className="bg-black border border-white/30 shadow-glow rounded-[30px] p-[clamp(30px,4.5vw,56px)] relative overflow-hidden">
           {/* Head */}
           <div className="max-w-[850px] mx-auto mb-12 text-center">
             <Eyebrow>Take a closer look</Eyebrow>
@@ -118,7 +118,7 @@ export default function FeatureTabs() {
           <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-8 lg:gap-11 items-start">
 
             {/* Sidebar Navigation */}
-            <div className="feature-sidebar flex flex-row overflow-x-auto lg:flex-col gap-2 bg-[#0B1818]/60 border border-hairline/60 rounded-[20px] p-2.5 lg:p-4 shrink-0 scrollbar-none">
+            <div className="feature-sidebar flex flex-row overflow-x-auto lg:flex-col gap-2 bg-black border border-white/20 shadow-[inset_0_0_12px_rgba(22,209,150,0.12)] rounded-[20px] p-2.5 lg:p-4 shrink-0 scrollbar-none">
               {tabs.map((tab) => {
                 const isActive = activeFeatureTab === tab.id;
                 return (
@@ -138,7 +138,7 @@ export default function FeatureTabs() {
             </div>
 
             {/* Right Animated Tab Panel */}
-            <div ref={panelRef} className="bg-[#0B1818]/30 border border-hairline/60 rounded-[24px] p-6 lg:p-9 min-h-[380px] flex items-center justify-center">
+            <div ref={panelRef} className="bg-black border border-white/20 shadow-[inset_0_0_12px_rgba(22,209,150,0.12)] rounded-[24px] p-6 lg:p-9 min-h-[380px] flex items-center justify-center">
 
               {/* Chat Panel */}
               {activeFeatureTab === 'chat' && (

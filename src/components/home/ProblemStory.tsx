@@ -3,13 +3,16 @@ import Eyebrow from '../shared/Eyebrow';
 
 export default function ProblemStory() {
   return (
-    <div className="bg-problem-section py-20 px-0 relative">
-      <div className="max-w-[1200px] mx-auto px-[22px] reveal relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-12 items-center">
+    <div className="bg-problem-section py-24 md:py-32 px-0 relative">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-8 reveal relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-16 lg:gap-24 items-center">
           {/* Left Col */}
           <div>
             <Eyebrow>The hidden tool tax</Eyebrow>
-            <div className="flex flex-col gap-2.5 mb-2 mt-[18px]" data-story>
+            <h2 className="text-white text-[clamp(1.7rem,3.4vw,2.4rem)] font-sora font-extrabold mt-4 mb-6 leading-tight">
+              You're paying a tax just to talk to your own team.
+            </h2>
+            <div className="flex flex-col gap-2.5 mb-6 mt-4" data-story>
               <div className="sl-line text-muted text-[1.08rem]">
                 Chat on one app. Video on another. Tasks somewhere else.
               </div>
@@ -23,10 +26,7 @@ export default function ProblemStory() {
                 And your team's data lives overseas.
               </div>
             </div>
-            <h2 className="text-white text-[clamp(1.7rem,3.4vw,2.4rem)] font-sora font-extrabold mt-4 mb-3.5 leading-tight">
-              You're paying a tax just to talk to your own team.
-            </h2>
-            <div className="text-mint font-bold font-sora text-[0.95rem] mt-3.5 flex items-center gap-2">
+            <div className="text-mint font-bold font-sora text-[0.95rem] mt-4 flex items-center gap-2">
               There's a simpler way <span className="animate-bounce">&darr;</span>
             </div>
           </div>
@@ -68,12 +68,12 @@ export default function ProblemStory() {
               </div>
             </div>
 
-            <div className="text-center my-3.5 text-mint text-[1.3rem] font-extrabold animate-bounce">&darr;</div>
+            <div className="text-center my-4 text-mint text-[1.3rem] font-extrabold animate-bounce">&darr;</div>
 
-            <div className="bg-gradient-to-r from-[#1FA968] to-[#16D196] text-[#0B1818] rounded-[18px] p-[16px] px-[22px] flex items-center justify-between shadow-glow border border-[#6ED190]/30 transition-all duration-300 hover:scale-[1.02]">
+            <div className="bg-gradient-to-r from-[#1FA968] to-[#16D196] text-[#283838] rounded-[18px] p-[16px] px-[22px] flex items-center justify-between shadow-glow border border-[#6ED190]/30 transition-all duration-300 hover:scale-[1.02]">
               <div className="flex items-center gap-[11px] font-sora font-bold text-[1.05rem]">
                 <span className="w-[34px] h-[34px] rounded-[9px] bg-white/20 grid place-items-center">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-[19px] h-[19px] text-[#0B1818]">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-[19px] h-[19px] text-[#283838]">
                     <path d="M4 7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-7l-5 4v-4a3 3 0 0 1-1-2z" />
                   </svg>
                 </span>

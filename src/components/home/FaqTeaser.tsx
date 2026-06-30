@@ -31,8 +31,8 @@ export default function FaqTeaser() {
   ];
 
   return (
-    <div className="bg-faq-section py-20 px-0 relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-[22px] reveal relative z-10">
+    <div className="bg-faq-section py-24 md:py-32 px-0 relative overflow-hidden">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-8 reveal relative z-10">
         {/* Head */}
         <div className="max-w-[680px] mx-auto mb-11 text-center">
           <Eyebrow>Questions, answered</Eyebrow>
@@ -42,7 +42,7 @@ export default function FaqTeaser() {
         </div>
 
         {/* FAQ Accordion List */}
-        <div className="max-w-[760px] mx-auto flex flex-col gap-[11px]">
+        <div className="max-w-[760px] mx-auto flex flex-col gap-4">
           {faqs.map((faq, index) => (
             <FaqItem key={index} question={faq.q} answer={faq.a} />
           ))}

@@ -107,8 +107,8 @@ export default function MultipleViews() {
   ];
 
   return (
-    <div ref={containerRef} className="bg-views-section py-20 px-0 relative">
-      <div className="max-w-[1200px] mx-auto px-[22px] relative z-10">
+    <div ref={containerRef} className="bg-views-section py-24 md:py-32 px-0 relative">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-8 relative z-10">
         <div className="py-2">
           {/* Head */}
           <div className="max-w-[850px] mx-auto mb-11 text-center views-head opacity-0">
@@ -128,7 +128,7 @@ export default function MultipleViews() {
                 key={tab.id}
                 onClick={() => setActiveViewTab(tab.id)}
                 className={`views-tab-btn opacity-0 inline-flex items-center gap-2 py-2.5 px-[17px] rounded-full border-[1.5px] font-sora font-semibold text-[0.9rem] cursor-pointer transition-all duration-200 ${activeViewTab === tab.id
-                  ? 'bg-[#6ED190] text-[#0B1818] border-[#6ED190] shadow-glow'
+                  ? 'bg-[#6ED190] text-[#090D0C] border-[#6ED190] shadow-glow'
                   : 'bg-white text-ink border-hairline hover:border-[#6ED190] hover:text-[#6ED190]'
                   }`}
               >

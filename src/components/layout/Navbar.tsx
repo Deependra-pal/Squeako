@@ -69,7 +69,7 @@ export default function Navbar() {
         className={`sticky top-0 z-[100] bg-paper/86 backdrop-blur-md border-b border-hairline transition-all duration-300 transform translate-y-0 ${isScrolled ? 'shadow-[0_6px_24px_rgba(34,18,80,0.06)]' : ''
           }`}
       >
-        <div className="max-w-[1200px] mx-auto px-[22px] lg:px-[40px] py-[18px] flex items-center justify-between gap-[18px]">
+        <div className="max-w-[1320px] mx-auto px-6 md:px-8 py-4 flex items-center justify-between gap-6">
           {/* Logo */}
           <a href="/" onClick={handleLinkClick} className=" logo flex items-center flex-none">
             <img src="/logo/1782391827071-a1ef33c7-4e28-4178-ae95-96525ad734f0.png" alt="Squeako Logo" className="w-[150px] h-[90px] -my-6 object-contain" />

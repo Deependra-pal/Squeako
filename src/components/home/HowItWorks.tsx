@@ -15,23 +15,42 @@ export default function HowItWorks() {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      // On scroll reveal, stagger-animate the horizontal columns into view smoothly
-      gsap.fromTo('.step-col',
-        { y: 40, opacity: 0, scale: 0.97 },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 1.0,
-          stagger: 0.15,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: '.timeline-grid',
-            start: 'top 86%',
-            once: true,
-          }
+      const cols = gsap.utils.toArray<HTMLElement>('.step-col');
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.timeline-grid',
+          start: 'top 86%',
+          once: true,
         }
-      );
+      });
+
+      cols.forEach((col, index) => {
+        // Animate each card reveal with a smooth bounce pop-in
+        tl.fromTo(col,
+          { y: 30, opacity: 0, scale: 0.96 },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.7,
+            ease: 'back.out(1.1)',
+          },
+          index === 0 ? undefined : '>-0.45'
+        );
+
+        // Animate horizontal progress line to the next card segment
+        if (index > 0) {
+          const targetWidth = `${index * 25}%`;
+          tl.to('.timeline-line-progress',
+            {
+              width: targetWidth,
+              duration: 0.6,
+              ease: 'power2.inOut',
+            },
+            '<'
+          );
+        }
+      });
     }, containerRef);
 
     return () => ctx.revert();
@@ -116,8 +135,8 @@ export default function HowItWorks() {
   ];
 
   return (
-    <div ref={containerRef} className="bg-how-section py-20 px-0 relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-[22px] relative z-10">
+    <div ref={containerRef} className="bg-how-section py-24 md:py-32 px-0 relative overflow-hidden">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-8 relative z-10">
         {/* Section Head */}
         <div className="max-w-[780px] mx-auto mb-14 text-center">
           <Eyebrow>From zero to talking in minutes</Eyebrow>
@@ -132,14 +151,16 @@ export default function HowItWorks() {
         {/* Timeline wrapper */}
         <div className="relative mt-8">
           {/* Horizontal line connector (desktop only) */}
-          <div className="absolute top-[48px] left-[10%] right-[10%] h-[1.5px] bg-[#1C3333] hidden md:block z-0"></div>
+          <div className="absolute top-[48px] left-[10%] right-[10%] h-[1.5px] bg-[#1C3333] hidden md:block z-0 overflow-hidden">
+            <div className="timeline-line-progress absolute top-0 left-0 h-full w-0 bg-[#16D196]"></div>
+          </div>
 
           {/* Steps Horizontal Row */}
-          <div className="timeline-grid flex overflow-x-auto gap-6 snap-x snap-mandatory pb-6 md:grid md:grid-cols-5 md:overflow-x-visible md:pb-0 relative z-10 scrollbar-thin">
+          <div className="timeline-grid flex overflow-x-auto gap-8 snap-x snap-mandatory pb-6 md:grid md:grid-cols-5 md:overflow-x-visible md:pb-0 relative z-10 scrollbar-thin">
             {steps.map((step) => (
               <div
                 key={step.num}
-                className="step-col opacity-0 w-[280px] shrink-0 snap-start md:w-auto flex flex-col items-center text-center bg-[#112222]/90 border border-hairline hover:border-[#16D196]/45 hover:shadow-[0_16px_36px_rgba(22,209,150,0.06)] rounded-[20px] p-[22px] transition-[border-color,box-shadow] duration-300"
+                className="step-col how-step-card opacity-0 w-[280px] shrink-0 snap-start md:w-auto flex flex-col items-center text-center rounded-[20px] p-[22px]"
                 style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
               >
                 {/* Step indicator */}

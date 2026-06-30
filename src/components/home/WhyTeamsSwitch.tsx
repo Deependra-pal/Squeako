@@ -97,8 +97,8 @@ export default function WhyTeamsSwitch() {
   ];
 
   return (
-    <div ref={containerRef} className="bg-switch-section py-20 px-0 relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-[22px] relative z-10">
+    <div ref={containerRef} className="bg-switch-section py-24 md:py-32 px-0 relative overflow-hidden">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-8 relative z-10">
         {/* Head */}
         <div className="max-w-[850px] mx-auto mb-14 text-center">
           <Eyebrow>Why teams switch</Eyebrow>
@@ -111,7 +111,7 @@ export default function WhyTeamsSwitch() {
         </div>
 
         {/* Cards Grid */}
-        <div className="switch-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="switch-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {points.map((pt) => (
             <TiltCard key={pt.title} className="switch-card-item h-full opacity-0">
               <FeatureCard icon={pt.icon} title={pt.title} description={pt.desc} className="h-full" />

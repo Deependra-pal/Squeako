@@ -61,8 +61,8 @@ export default function StoriesTeaser() {
   ];
 
   return (
-    <div ref={containerRef} className="bg-stories-section py-20 px-0 relative">
-      <div className="max-w-[1200px] mx-auto px-[22px] relative z-10">
+    <div ref={containerRef} className="bg-stories-section py-24 md:py-32 px-0 relative">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-8 relative z-10">
         <div className="py-2">
           {/* Head */}
           <div className="max-w-[850px] mx-auto mb-11 text-center">
@@ -73,7 +73,7 @@ export default function StoriesTeaser() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stories.map((story) => (
               <div
                 key={story.name}

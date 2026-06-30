@@ -36,12 +36,12 @@ export default function AiSection() {
   ];
 
   return (
-    <div className="bg-ai-section py-[13px] px-0">
-      <div className="max-w-[1200px] mx-auto px-[22px] reveal">
-        <div className="glass-panel rounded-[30px] p-[clamp(34px,5vw,68px)] text-white relative overflow-hidden">
+    <div className="bg-[#D9E38A] rounded-[32px] md:rounded-[48px] w-full my-16 md:my-24 py-20 md:py-28 px-0 relative overflow-hidden">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-8 reveal">
+        <div className="bg-black border border-white/30 shadow-glow rounded-[30px] p-[clamp(34px,5vw,68px)] text-white relative overflow-hidden">
           {/* Head */}
           <div className="max-w-[850px] mx-auto mb-11 text-center relative z-10">
-            <Eyebrow light>Meet Squeako AI</Eyebrow>
+            <Eyebrow>Meet Squeako AI</Eyebrow>
             <h2 className="text-white text-[clamp(1.8rem,3.8vw,2.7rem)] font-sora font-extrabold mt-3.5 mb-3.5 leading-tight">
               An AI teammate inside every chat
             </h2>
@@ -51,7 +51,7 @@ export default function AiSection() {
           </div>
 
           {/* Grid list of cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
             {points.map((item) => (
               <div
                 key={item.title}
